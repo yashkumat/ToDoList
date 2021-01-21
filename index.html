@@ -88,10 +88,12 @@
         // add item to items
         addItem = () => {
             let item = document.getElementById('item').value;
-            item = item.charAt(0).toUpperCase() + item.slice(1);
-            items.push(item);
-            document.getElementById('item').value = '';
-            buildList(items, completed);
+            if(item != ''){
+                item = item.charAt(0).toUpperCase() + item.slice(1);
+                items.push(item);
+                document.getElementById('item').value = '';
+                buildList(items, completed);
+            }
         }
 
         // build list not completed items on top and completed items on bottom
