@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <!-- Bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Google icons cdn -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Heading -->
+        <div class="d-flex justify-content-center m-4">
+            <h1 class="display-3">ToDo List</h1>
+        </div>
+        <!-- Input field -->
+        <div class="mx-auto">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Add Item" aria-label="Add Item" aria-describedby="button-addon2" name="item" id="item" >
+                <button class="btn btn-outline-primary" id="addButton" type="submit" id="button-addon2" onclick="addItem()">
+                    <span class="material-icons">add</span>
+                </button>
+            </div>
+        </div>
+        <!-- Error message div -->
+        <div class="row">
+            <div class="message" id="message"></div>
+        </div>
+        <!-- List div -->
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="d-flex flex-column-reverse mt-4">
+                    <ul class="list-group" id="listGroup">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><span>Nothing to do!</span><button type="button" onclick="addFocus()" class="btn btn-outline-primary btn-sm hoverable" aria-label="Add Item"><span class="material-icons">add</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstarp js bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="assets/main.js"></script> 
+</body>
+</html>
