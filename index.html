@@ -50,7 +50,7 @@
             <div class="col-lg-6 offset-lg-3">
                 <div class="d-flex flex-column-reverse mt-4">
                     <ul class="list-group" id="listGroup">
-                        <li class="list-group-item d-flex justify-content-between align-items-center"><span>Nothing to do!</span><button type="button" onclick="addFocus()" class="btn btn-outline-primary btn-sm hoverable" aria-label="Add Item"><span class="material-icons">add</span></button></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><span>Nothing to do!</span><button type="button" onclick="addFocus()" class="btn btn-outline-primary btn-sm hoverable pt-1" aria-label="Add Item"><span class="material-icons">add</span></button></li>
                     </ul>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                 });
             }
             if(items.length <=0 && completed.length <= 0){
-                html += '<li class="list-group-item d-flex justify-content-between align-items-center"><span>Nothing to do!</span><button type="button" onclick="addFocus()" class="btn btn-outline-primary btn-sm hoverable" aria-label="Add Item"><span class="material-icons">add</span></button></li>';
+                html += '<li class="list-group-item d-flex justify-content-between align-items-center"><span>Nothing to do!</span><button type="button" onclick="addFocus()" class="btn btn-outline-primary btn-sm hoverable pt-1" aria-label="Add Item"><span class="material-icons">add</span></button></li>';
             }
             ul.innerHTML = html;
         }
