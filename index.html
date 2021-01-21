@@ -8,7 +8,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- Google icons cdn -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .deleteButton{
+            cursor: grab; 
+            color: red;
+        }
+
+        .completeButton{
+            cursor: grab; 
+            color: green;
+        }
+
+        #taskCompleted{
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
 
@@ -44,6 +58,112 @@
 
     <!-- Bootstarp js bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="assets/main.js"></script> 
+    <script>
+    
+        // Items Array
+        let items = [];
+
+        // Completed Items Array
+        let completed = [];
+
+        // Input element
+        let input = document.getElementById('item');
+
+        // fire addButton - click event on enter pressed ( keycode = 13)
+        input.addEventListener('keyup', (event) => {
+            if(event.keyCode === 13){
+                document.getElementById('addButton').click();
+            }
+        });
+
+        // focus on input field if add button in alert clicked
+        addFocus = () => {
+            let item = document.getElementById('item');
+            item.focus();
+        }
+
+        // add item to items
+        addItem = () => {
+            let item = document.getElementById('item').value;
+            item = item.charAt(0).toUpperCase() + item.slice(1);
+            items.push(item);
+            document.getElementById('item').value = '';
+            buildList(items, completed);
+        }
+
+        // build list not completed items on top and completed items on bottom
+        buildList = (items, completed) => {
+            let ul = document.getElementById('listGroup');
+            let html = '';
+            if(items.length > 0){
+                items.forEach((item,index) => {
+                    html += '<li class="list-group-item d-flex justify-content-between align-items-center"><span id="task'+ index +'">' + item + '</span><div><span class="material-icons completeButton" id="completeButton" onclick="completeTask('+ index +')">done</span> <span class="material-icons deleteButton" id="deleteItem" onclick="deleteItem('+ index +')">delete</span></div></li>';
+                });
+            }
+            if(completed.length > 0){
+                completed.forEach((task,id) => {
+                    html += '<li class="list-group-item d-flex justify-content-between align-items-center"><span id="taskCompleted">' + task + '</span><div><span class="material-icons deleteButton" id="deleteItem" onclick="deleteCompletedItem('+ id +')">delete</span></div></li>';
+                });
+            }
+            if(items.length <=0 && completed.length <= 0){
+                html += '<li class="list-group-item d-flex justify-content-between align-items-center"><span>Nothing to do!</span><button type="button" onclick="addFocus()" class="btn btn-outline-primary btn-sm hoverable" aria-label="Add Item"><span class="material-icons">add</span></button></li>';
+            }
+            ul.innerHTML = html;
+        }
+
+        // Alert on delete if not completed
+        deleteItem = (id) => {
+            let value = items[id];
+
+            let isCompleted = completed.includes(value);
+
+            if(!isCompleted){
+                let message = document.getElementById('message');
+                html = '<div class="alert alert-warning alert-dismissible fade show d-flex justify-content-between align-items-center mt-4" role="alert"><strong>Task not completed!</strong> <button type="button" onclick="forceDelete('+id+')" class="btn btn-warning btn-sm hoverable" data-bs-dismiss="alert" aria-label="Delete Anyways">Delete Anyways</button> <button type="button" class="btn-sm hoverable btn-close mt-1" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+                message.innerHTML = html;
+            }
+            
+            buildList(items, completed);
+            
+        }
+
+        // Force delete item even if not completed
+        forceDelete = (id) => {
+            let value = items[id];
+
+            // Delete form array
+            items = items.filter(function(item) {
+                return item !== value
+            });
+
+            buildList(items, completed);
+        }
+
+
+        // Delete completed item
+        deleteCompletedItem = (id) => {
+            let value = completed[id];
+
+            completed = completed.filter(function(item) {
+                return item !== value
+            });
+
+            buildList(items, completed);
+        }
+
+        // complete task
+        completeTask = (id) => {
+            completed.push(items[id]);
+            let value = items[id];
+
+            items = items.filter(function(item) {
+                return item !== value
+            });
+
+            buildList(items, completed);
+
+        }
+
+    </script> 
 </body>
 </html>
