@@ -34,12 +34,14 @@
         </div>
         <!-- Input field -->
         <div class="mx-auto">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Add Item" aria-label="Add Item" aria-describedby="button-addon2" name="item" id="item" >
-                <button class="btn btn-outline-primary" id="addButton" type="submit" id="button-addon2" onclick="addItem()">
-                    <span class="material-icons">add</span>
-                </button>
-            </div>
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Add Item" aria-label="Add Item" aria-describedby="button-addon2" name="item" id="item" required>
+                    <button class="btn btn-outline-primary" id="addButton" type="submit" id="button-addon2" onclick="addItem()">
+                        <span class="material-icons">add</span>
+                    </button>
+                </div>
+            </form>
         </div>
         <!-- Error message div -->
         <div class="row">
