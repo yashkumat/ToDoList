@@ -114,7 +114,7 @@
             }
             if(completed.length > 0){
                 completed.forEach((task,id) => {
-                    html += '<li class="list-group-item d-flex justify-content-between align-items-center"><span id="taskCompleted">' + task + '</span><div><span class="material-icons completedButton" id="completeButton" onclick="completeTask('+ index +')">done</span> <span class="material-icons deleteButton" id="deleteItem" onclick="deleteCompletedItem('+ id +')">delete</span></div></li>';
+                    html += '<li class="list-group-item d-flex justify-content-between align-items-center"><span id="taskCompleted">' + task + '</span><div><span class="material-icons completedButton">done</span> <span class="material-icons deleteButton" id="deleteItem" onclick="deleteCompletedItem('+ id +')">delete</span></div></li>';
                 });
             }
             if(items.length <=0 && completed.length <= 0){
