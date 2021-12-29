@@ -86,7 +86,7 @@ This function pushes completed item to completed array. Filters (remove) out tha
         }
 ``` 
 
-This function changes content of unordered list <ul> (with id list-group) every time it is called. It display list of item in items array (task to be completed with mark complete and delete button), list of item in completed array (completed tasks with delete button)
+This function changes content of unordered list (with id list-group) every time it is called. It display list of item in items array (task to be completed with mark complete and delete button), list of item in completed array (completed tasks with delete button)
 
 
 - Delete Item
