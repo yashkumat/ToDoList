@@ -2,6 +2,8 @@
 
 ToDo List Application made purely in JavaScript, CSS, HTML.
 
+![image](https://raw.githubusercontent.com/yashkumat/ToDoList/main/todolist.png)
+
 ## How To Use
 
 Run the follow url in browser
