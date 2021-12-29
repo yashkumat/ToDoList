@@ -7,7 +7,7 @@ ToDo List Application made purely in JavaScript, CSS, HTML.
 Run the follow url in browser
 
 ```url
-
+https://yashkumat.github.io/ToDoList/
 ```
 
 ## Usage
