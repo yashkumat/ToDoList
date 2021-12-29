@@ -22,6 +22,8 @@ Make daily tasks list using this simple application that has following functiona
 
 - Add Items
 
+![image](https://raw.githubusercontent.com/yashkumat/ToDoList/main/add_todo.png)
+
 **array.push()**
 
 ```javascript
