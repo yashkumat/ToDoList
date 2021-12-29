@@ -45,6 +45,8 @@ This function adds item (value in the input field with id 'item') to Items array
 
 **array.filter()**
 
+![image](https://raw.githubusercontent.com/yashkumat/ToDoList/main/complete_todo.png)
+
 ```javascript
 // complete task
         completeTask = (id) => {
@@ -65,6 +67,8 @@ This function pushes completed item to completed array. Filters (remove) out tha
 - Build List 
 
 **DOM Manipulation**
+
+![image](https://raw.githubusercontent.com/yashkumat/ToDoList/main/todolist.png)
 
 ```javascript
 // build list not completed items on top and completed items on bottom
@@ -92,6 +96,8 @@ This function changes content of unordered list (with id list-group) every time 
 
 
 - Delete Item
+
+![image](https://raw.githubusercontent.com/yashkumat/ToDoList/main/delete_todo.png)
 
 ```javascript
 // Delete completed item
